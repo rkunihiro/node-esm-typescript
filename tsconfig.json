@@ -9,10 +9,10 @@
         // "experimentalDecorators": true,
         // "emitDecoratorMetadata": true,
 
-        "module": "es2022",
+        "module": "esnext",
         "moduleResolution": "bundler",
-        // "rootDir": "./",
-        // "baseUrl": "./",
+        "rootDir": ".",
+        // "baseUrl": "./src",
         // "paths": {},
         "allowImportingTsExtensions": true,
         // "resolvePackageJsonExports": true,
@@ -22,18 +22,23 @@
         // "allowArbitraryExtensions": true,
         // "noResolve": true,
 
-        // "allowJs": true,
-        // "checkJs": true,
+        "allowJs": true,
+        "checkJs": true,
         // "maxNodeModuleJsDepth": 1,
 
+        // "outDir": "./dist",
+        // "declarationDir": "./dist",
         // "declaration": true,
         // "declarationMap": true,
         // "emitDeclarationOnly": true,
         // "sourceMap": true,
+        // "inlineSourceMap": true,
+        // "removeComments": true,
         "noEmit": true,
 
         "isolatedModules": true,
         "verbatimModuleSyntax": true,
+        // "isolatedDeclarations": true,
         // "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         // "preserveSymlinks": true,
@@ -61,5 +66,6 @@
 
         // "skipDefaultLibCheck": true,
         "skipLibCheck": true
-    }
+    },
+    "include": ["src"]
 }
