@@ -1,0 +1,9 @@
+{
+    "name": "k6",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "devDependencies": {
+        "@types/k6": "^0.52.0"
+    }
+}

@@ -1,0 +1,12 @@
+dist/
+node_modules/
+
+*.map
+*.log
+*.swp
+*.lock
+*.tsbuildinfo
+
+._*
+.DS_Store
+Thumbs.db

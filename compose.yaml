@@ -1,0 +1,38 @@
+services:
+  prod:
+    container_name: node-esm-typescript-container-prod
+    image: rkunihiro/node-esm-typescript:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.docker
+    networks:
+      - default
+    ports:
+      - "3000:3000"
+    init: true
+    platform: linux/amd64
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+
+  k6:
+    container_name: node-esm-typescript-container-k6
+    image: grafana/k6:latest
+    depends_on:
+      - prod
+    networks:
+      - default
+    volumes:
+      - ./.docker/k6:/k6
+    working_dir: /k6
+    entrypoint: ["/bin/sh"]
+    tty: true
+    platform: linux/amd64
+
+networks:
+  default:
+    name: node-esm-typescript-network-default
